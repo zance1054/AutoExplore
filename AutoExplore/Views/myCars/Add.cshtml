@@ -1,0 +1,72 @@
+﻿@model AutoExplore.Models.Car
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@{
+    Layout = "_Layout";
+}
+<h1> Add a new Vehicle </h1>
+
+<fieldset>
+
+    <form asp-action="Add" asp-controller="myCars">
+
+        <div asp-validation-summary="ModelOnly"></div>
+
+
+        <p>
+            <label asp-for="make"></label>
+            <input asp-for="make" placeholder="Make for Vehicle" />
+            <span asp-validation-for="make"></span>
+        </p>
+
+        <p>
+            <label asp-for="model"></label>
+            <input asp-for="model" placeholder="Model for Vehicle" />
+            <span asp-validation-for="model"></span>
+        </p>
+
+        <p>
+            <label asp-for="year"></label>
+            <input asp-for="year" placeholder="Year for Vehicle" />
+            <span asp-validation-for="year"></span>
+        </p>
+
+        <p>
+            
+            <button class="carSearchButton" type="submit" onclick="location.href = '~/View/myCars/Index.cshtml'">Add</button>
+        </p>
+
+    </form>
+</fieldset>
+
+<style>
+    .carSearchButton {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: #7289da;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .field-validation-error{
+        color: #cb202a;
+        font-weight: bold;
+        display: block;
+        margin-left: 90px;
+    }
+
+    .input-validation-error{
+        box-shadow: #cb202a 1px;
+
+    }
+
+    .validation-summary-errors{
+        margin: 1em;
+        color: #cb202a;
+        font-weight: bold;
+    }
+</style>

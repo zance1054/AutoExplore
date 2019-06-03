@@ -1,0 +1,44 @@
+﻿@model AutoExplore.Models.Car
+@{
+    Layout = "_Layout";
+}
+
+<h1> @Model.year @Model.make  @Model.model</h1>
+
+    <iframe width="420" height="315"
+            src=@Model.videoURL>
+
+    </iframe>
+
+    <article>
+        <h1>
+            Trims
+        </h1>
+        <div>
+            <h2 class="trimLabel"> Model ID: </h2> <span class="trimList"> @Model.modelID </span>
+            <h2 class="trimLabel"> Body Type: </h2><span class="trimList">  @Model.Body </span>
+            <h2 class="trimLabel"> Model Trim: </h2><span class="trimList">  @Model.modelTrim </span>
+            <h2 class="trimLabel"> Transmission: </h2><span class="trimList">  @Model.Transmission </span>
+            <h2 class="trimLabel"> Drive Type: </h2><span class="trimList">  @Model.DriveType </span>
+            <h2 class="trimLabel"> Number of Doors: </h2><span class="trimList">  @Model.doors </span>
+            <h2 class="trimLabel"> Number of Seats: </h2><span class="trimList">  @Model.seats </span>
+            <h2 class="trimLabel"> Weight(kgs): </h2><span class="trimList">  @Model.weight </span>
+        </div>
+    </article>
+
+
+<style>
+    .trimList {
+        color: #99aab5;
+        font-size: 17px;
+        font-family: Verdana;
+        grid-row: 1 / 4;
+    }
+    .trimLabel {
+        color: #7289da;
+        font-size: 17px;
+        font-family: Verdana;
+        grid-row: 1 / 4;
+    }
+</style>
+

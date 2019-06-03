@@ -1,0 +1,96 @@
+﻿@model IEnumerable<AutoExplore.Models.Car>
+
+@{
+    Layout = "_Layout";
+}
+
+<h1> My Vehicles </h1>
+
+
+<p>
+Below are your saved vehicles.
+</p>
+
+
+<a class="carSearchButton" asp-area="" asp-controller="myCars" asp-action="Add">Add New Vehicle</a>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a class="deleteAllButton" asp-area="" asp-controller="myCars" asp-action="deleteAll">Delete All Vehicles</a>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div>
+    @foreach(var car in Model)
+    {
+        <article>
+            <h1>
+                @Html.ActionLink(car.model, "details", "myCars",
+                    new { id = car.Id }
+                )
+            </h1>
+            <div>
+                <span class="carList">Make:  @car.make </span>
+                <span class="carList">Model:  @car.model </span>
+                <span class="carList">Year: @car.year </span>
+                <span class="carList">Added On: @car.posted </span>
+
+                @Html.ActionLink("Delete this Vehicle", "delete", "myCars",
+                    new { id = car.Id })
+                
+
+            </div>
+
+
+        </article>
+    }
+</div>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .carSearchButton {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: #7289da;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    .carSearchButton:hover {
+        background: #0b7dda;
+    }
+
+    .carList {
+        color: black;
+        font-size: 17px;
+        display: list-item;
+        list-style-type: decimal;
+    }
+
+    .deleteButton{
+        color:white;
+        background-color:crimson;
+        font-size:17px;
+        display: inline-block;
+    }
+
+    .deleteAllButton {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: crimson;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+
+</style>
