@@ -3,7 +3,7 @@
 @{
     Layout = "_Layout";
 }
-<h1> Add a new Vehicle </h1>
+<h1> Add A New Vehicle </h1>
 
 <fieldset>
 
@@ -13,26 +13,25 @@
 
 
         <p>
-            <label asp-for="make"></label>
-            <input asp-for="make" placeholder="Make for Vehicle" />
+            <label class="labelEntry" asp-for="make"></label>
+            <input class="entry" asp-for="make" placeholder="Make for vehicle" />
             <span asp-validation-for="make"></span>
         </p>
 
         <p>
-            <label asp-for="model"></label>
-            <input asp-for="model" placeholder="Model for Vehicle" />
+            <label class="labelEntry" asp-for="model"></label>
+            <input class="entry" asp-for="model" placeholder="Model for vehicle" />
             <span asp-validation-for="model"></span>
         </p>
 
         <p>
-            <label asp-for="year"></label>
-            <input asp-for="year" placeholder="Year for Vehicle" />
+            <label class="labelEntry" asp-for="year"></label>
+            <input class="entry" asp-for="year" placeholder="Year for vehicle" />
             <span asp-validation-for="year"></span>
         </p>
 
         <p>
-            
-            <button class="carSearchButton" type="submit" onclick="location.href = '~/View/myCars/Index.cshtml'">Add</button>
+            <button class="carSearchButton" type="submit">Add</button>
         </p>
 
     </form>
@@ -40,8 +39,9 @@
 
 <style>
     .carSearchButton {
+        text-align: center;
         float: left;
-        width: 20%;
+        width: 100%;
         padding: 10px;
         background: #7289da;
         color: white;
@@ -50,6 +50,11 @@
         border-left: none;
         cursor: pointer;
         display: inline-block;
+        padding: .5rem 1rem;
+        padding-bottom: 25px;
+        font-size: 1.5625rem;
+        line-height: 1.5;
+        border-radius: 1rem;
     }
 
     .field-validation-error{
@@ -68,5 +73,25 @@
         margin: 1em;
         color: #cb202a;
         font-weight: bold;
+    }
+
+    .entry {
+        display: block;
+        padding: 20px;
+        align-content: center;
+        width: 100%;
+        border-radius: 4px;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    .entry[type=text]:focus{
+        border: 3px solid #555;
+    }
+    .labelEntry{
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
     }
 </style>

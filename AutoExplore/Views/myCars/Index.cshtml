@@ -13,9 +13,7 @@ Below are your saved vehicles.
 
 
 <a class="carSearchButton" asp-area="" asp-controller="myCars" asp-action="Add">Add New Vehicle</a>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<a class="deleteAllButton" asp-area="" asp-controller="myCars" asp-action="deleteAll">Delete All Vehicles</a>
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -25,20 +23,17 @@ Below are your saved vehicles.
     {
         <article>
             <h1>
-                @Html.ActionLink(car.model, "details", "myCars",
-                    new { id = car.Id }
+                @Html.ActionLink(car.year + " " + car.make + " " + car.model + " Details", "details", "myCars",
+                    new { id = car.Id }, new { @class = "showVehicle" }
                 )
             </h1>
             <div>
-                <span class="carList">Make:  @car.make </span>
-                <span class="carList">Model:  @car.model </span>
-                <span class="carList">Year: @car.year </span>
-                <span class="carList">Added On: @car.posted </span>
 
                 @Html.ActionLink("Delete this Vehicle", "delete", "myCars",
-                    new { id = car.Id })
-                
+                    new { id = car.Id }, new { @class = "showDetails" }
+                )
 
+                <p>&nbsp;</p>
             </div>
 
 
@@ -67,18 +62,54 @@ Below are your saved vehicles.
         background: #0b7dda;
     }
 
+    .showVehicle {
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        color: #0b7dda;
+        padding-bottom: 50px;
+    }
+
+    a{
+        text-decoration:none;
+    }
+
+    .showDetails {
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        background-color: darkslategray;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    .showDetails:hover {
+        background-color: darkgrey;
+    }
+
+
     .carList {
         color: black;
         font-size: 17px;
         display: list-item;
         list-style-type: decimal;
+        font-family: 'Roboto', sans-serif;
     }
 
-    .deleteButton{
-        color:white;
-        background-color:crimson;
-        font-size:17px;
+    .deleteButton {
+        color: white;
+        background-color: crimson;
+        font-size: 17px;
         display: inline-block;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .showDetails,.deleteAllButton, .deleteButton, .carSearchButton {
+        padding: .5rem 1rem;
+        font-size: 1.5625rem;
+        line-height: 1.5;
+        border-radius: 1rem;
+        font-family: 'Roboto', sans-serif;
     }
 
     .deleteAllButton {

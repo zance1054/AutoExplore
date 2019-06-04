@@ -5,7 +5,7 @@
 
 <h1> @Model.year @Model.make  @Model.model</h1>
 
-    <iframe width="420" height="315"
+    <iframe align="middle" frameborder="0" class="video" width="700" height="400"
             src=@Model.videoURL>
 
     </iframe>
@@ -31,14 +31,18 @@
     .trimList {
         color: #99aab5;
         font-size: 17px;
-        font-family: Verdana;
+        font-family: 'Roboto', sans-serif;
         grid-row: 1 / 4;
     }
     .trimLabel {
         color: #7289da;
         font-size: 17px;
-        font-family: Verdana;
+        font-family: 'Roboto', sans-serif;
         grid-row: 1 / 4;
+    }
+    .video{
+        display:block;
+        outline-color: dimgrey;
     }
 </style>
 

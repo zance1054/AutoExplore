@@ -13146,11 +13146,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\AutoExplore\\AutoExplore\\AutoExplore.csproj",
+      "projectUniqueName": "E:\\GitHub\\AutoExplore\\AutoExplore\\AutoExplore.csproj",
       "projectName": "AutoExplore",
-      "projectPath": "E:\\AutoExplore\\AutoExplore\\AutoExplore.csproj",
+      "projectPath": "E:\\GitHub\\AutoExplore\\AutoExplore\\AutoExplore.csproj",
       "packagesPath": "C:\\Users\\Alec\\.nuget\\packages\\",
-      "outputPath": "E:\\AutoExplore\\AutoExplore\\obj\\",
+      "outputPath": "E:\\GitHub\\AutoExplore\\AutoExplore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

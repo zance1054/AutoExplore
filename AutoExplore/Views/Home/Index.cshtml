@@ -1,14 +1,69 @@
 ﻿@{
     Layout = "_Layout";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<div class="jumbotron text-right">
+    <h1> Auto Explore</h1>
 </div>
 
-<p>
-    Copyright Alexander Fielding @DateTime.Now.Year
-</p>
+<div class="busItem">
+    <h1> Transparency </h1>
+    <p class="busDescription"> Explore your options with all the facts in front of you, from peer reviews to actual specifications received from 
+    the <a href="http://www.carqueryapi.com/">CarQuery</a> API
+    </p>
+</div>
+
+<div class="busItem">
+    <h1> Features </h1>
+    <p class="busDescription">
+        Auto Explorer uses the power of Entity framework to store your Auto shopping options and share them with <a href="https://www.facebook.com/">YouTube</a> and
+        <a href="http://www.carqueryapi.com/">CarQuery</a> to give you as much information that you need to make an informed purchase.
+    </p>
+</div>
+
+<div class="busItem">
+    <h1> Security </h1>
+    <p class="busDescription">
+    Auto Explore uses the power of <a href="https://www.facebook.com/">Facebook</a> Facebook and <a href="https://www.google.com/">Google</a> Authentification for your ensured security.
+    </p>
+</div>
+
+<style>
+    .jumbotron {
+        margin-bottom: 0px;
+        background: linear-gradient(
+                rgba(20, 20, 20, .6),
+                rgba(20, 20, 20, .6)
+              ),
+              url(https://s1.cdn.autoevolution.com/images/gallery/QOROS-5-5642_19.jpg);
+        background-position: 0% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: black 0.3em 0.3em 0.3em;
+        height: 100%;
+    }
+    .imageText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .busItem{
+        display: inline-block;
+        font-family: 'Roboto', sans-serif;
+        padding: 25px;
+    }
+
+    .busDescription {
+        display: inline-block;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        padding: 25px;
+    }
+
+
+</style>
 
 

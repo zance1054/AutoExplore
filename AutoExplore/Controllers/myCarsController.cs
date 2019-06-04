@@ -25,6 +25,7 @@ namespace AutoExplore.Controllers
             _db = db;
         }
 
+        #region Delete
         [Route("delete/{id}")]
         public IActionResult delete(long id)
         {
@@ -34,12 +35,20 @@ namespace AutoExplore.Controllers
 
             return View();
         }
-        [Route("deleteAll/userID")]
-        public void deleteAll()
+        [Route("deleteAll")]
+        public IActionResult delete()
         {
-            var car = _db.Cars.Where(x => x.user == User.Identity.Name).OrderByDescending(x => x.posted).ToArray();
-        }
+            var cars = _db.Cars.Where(x => x.user == User.Identity.Name).ToArray();
 
+            foreach(Car vehicle in cars)
+            {
+
+                _db.Cars.Remove(vehicle);
+            }
+
+            return View();
+        }
+        #endregion
         [Authorize]
         [Route("")]
         public IActionResult Index()
@@ -103,7 +112,7 @@ namespace AutoExplore.Controllers
             {
             }
 
-            return View();
+            return RedirectToAction("Index");
 
         }
 
@@ -145,7 +154,7 @@ namespace AutoExplore.Controllers
             });
 
             var searchListRequest = youtubeService.Search.List("snippet");
-            searchListRequest.Q = car.make + " " + car.model + " " + car.year;
+            searchListRequest.Q = "Review" + car.make + " " + car.model + " " + car.year;
             searchListRequest.MaxResults = 1;
 
             // Call the search.list method to retrieve results matching the specified query term.
