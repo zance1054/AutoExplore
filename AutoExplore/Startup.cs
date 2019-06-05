@@ -45,12 +45,15 @@ namespace AutoExplore
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            /*
+             * For some reason, facebook register only works in development mode and not in live mode
+             * not sure why, but this will only work with my personal facebook credentials
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
-                facebookOptions.AppId = "2303755813213510";
-                facebookOptions.AppSecret = "1db03302f566e1482694a1f02145c86e";
+                facebookOptions.AppId = "325447788350299";
+                facebookOptions.AppSecret = "f7dc77f3a1e959d6672250cf5bb1433a";
             });
-
+            */
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
                 googleOptions.ClientId = "817281697589-arq503dk53k6lbd9vefqaqterto2gjvq.apps.googleusercontent.com";
